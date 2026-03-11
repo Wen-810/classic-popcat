@@ -44,5 +44,35 @@
             <img src="imgs/popcat.svg" alt="POPCAT CLASSIC" width="400px" class="title">
             <div class="cat-img" id="p">0</div>
         </div>
+        <script>
+
+            const display = document.getElementById('p');
+
+            let count = 0;
+            function increment() {
+                count++;
+                console.log(count); 
+                display.textContent = count; 
+            }
+
+    
+            display.addEventListener('click', increment);
+
+  
+            function mouthOpen() {
+                display.style.backgroundImage = 'url(imgs/op.png)';
+            }
+            function mouthClose() {
+                display.style.backgroundImage = 'url(imgs/p.png)';
+            }
+
+       
+            display.addEventListener('mousedown', () => {
+                mouthOpen();
+                increment(); 
+            });
+            display.addEventListener('mouseup', mouthClose);
+            display.addEventListener('mouseleave', mouthClose); 
+        </script>
     </body>
 </html>
